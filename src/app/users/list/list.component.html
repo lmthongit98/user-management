@@ -15,12 +15,13 @@
       <td>{{user.email}}</td>
       <td>{{user.role}}</td>
       <td style="white-space: nowrap">
-        <a (click)="openDialog(user.id)" class="btn btn-sm btn-primary mr-1">Edit</a>
-        <button (click)="openDialog(user.id, 'delete')" class="btn btn-sm btn-danger btn-delete-user"
+        <a (click)="openDialog(user.id)" class="btn btn-sm btn-primary">Edit</a>
+        <button (click)="openDialog(user.id, 'delete')" class="btn btn-sm btn-danger btn-delete-user mx-3"
           [disabled]="user.isDeleting">
           <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
           <span *ngIf="!user.isDeleting">Delete</span>
         </button>
+        <a routerLink="detail/{{user.id}}" class="btn btn-sm btn-success mr-1">Detail</a>
       </td>
     </tr>
   </tbody>

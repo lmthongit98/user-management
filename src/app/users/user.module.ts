@@ -10,6 +10,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ConfirmComponent } from './confirm/confirm.component';
 import {MatButtonModule} from '@angular/material/button';
+import { DetailComponent } from './detail/detail.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -18,7 +20,9 @@ import {MatButtonModule} from '@angular/material/button';
     AddEditComponent,
     LayoutComponent,
     ListComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    DetailComponent,
+
   ],
   imports: [
     CommonModule,
@@ -26,8 +30,7 @@ import {MatButtonModule} from '@angular/material/button';
     ReactiveFormsModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule,
-    MatButtonModule
+    MatButtonModule,
   ]
 })
 export class UserModule { }
