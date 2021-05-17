@@ -1,5 +1,7 @@
+import { computeMsgId } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { map, switchMap } from 'rxjs/operators';
 import { User } from 'src/app/_models/user';
 import { UserService } from 'src/app/_services/user.service';
 
@@ -20,11 +22,14 @@ export class DetailComponent implements OnInit {
 ) {}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    this.userService.getById(this.id).subscribe(user => {
-      this.user = user;
-      console.log(this.user)
-    })
+    // this.id = this.route.snapshot.params['id'];
+    // this.userService.getById(this.id).subscribe(user => {
+    //   this.user = user;
+    //   console.log(this.user)
+    // })
+    this.route.paramMap.pipe(
+      switchMap(params => this.userService.getById(params.get('id')!))
+    ).subscribe(user => this.user = user);
   }
 
 }

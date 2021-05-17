@@ -2,7 +2,8 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark">
   <div class="navbar-nav">
       <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-      <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+      <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Users</a>
+      <a class="nav-item nav-link" routerLink="/project-jira" routerLinkActive="active">Project Jira</a>
       <a *ngIf="!isLogin" class="nav-item nav-link" routerLink="/login" routerLinkActive="active">Login</a>
       <a *ngIf="isLogin" style="cursor: pointer;" class="nav-item nav-link" (click)="logout()" >Logout</a>
       <a *ngIf="isLogin" style="font-weight: bold; margin-left: 1400px;" class="nav-item nav-link">{{currentUser.firstName}}</a>

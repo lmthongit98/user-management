@@ -1,0 +1,33 @@
+<h1>Projects</h1>
+<a class="btn btn-sm btn-success mb-2">Add Project</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th style="width: 30%">Project Name</th>
+      <th style="width: 30%">Creator</th>
+      <th style="width: 30%">Category</th>
+      <th style="width: 10%">Action</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="!this.loading">
+    <tr *ngFor="let project of projects">
+      <td>{{project.projectName}}</td>
+      <td>{{project.creator.firstName}} {{project.creator.lastName}} </td>
+      <ng [ngSwitch]="project.categoryId">
+        <td *ngSwitchCase="1">
+            Dự án phần mềm
+        </td>
+        <td *ngSwitchCase="2">
+          Dự án web
+        </td>
+        <td *ngSwitchDefault>
+          Dự án di động
+        </td>
+      </ng>
+      <td style="white-space: nowrap">
+        <a class="btn btn-sm btn-primary">Edit</a>
+        <a class="btn btn-sm btn-success mr-1">Detail</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 class="text-center text-primary">Jira Dashboard</h2>
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+  </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="./createProject" routerLinkActive="active" >Create Project</a>
+    </li>
+    <li class="nav-item">
+        <a  class="nav-link" routerLink="./manageProject" routerLinkActive="active">Manage Project</a>
+    </li>
+</ul>
+<router-outlet></router-outlet>
